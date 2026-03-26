@@ -1,0 +1,32 @@
+meta {
+  name: API Get Signed Invoice
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{smt_server_url}}/epicor/getsignedinvoice
+  body: multipartForm
+  auth: basic
+}
+
+headers {
+  "{{key_name}}": {{key_value}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:multipart-form {
+  invoice_number: 000001/PERJ-E/HK-XXXX/05/2026
+  siteid: SIG007
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}

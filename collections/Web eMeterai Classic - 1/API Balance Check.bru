@@ -1,0 +1,31 @@
+meta {
+  name: API Balance Check
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{smt_server_url}}/epicor/balancecheck
+  body: multipartForm
+  auth: basic
+}
+
+headers {
+  "{{key_name}}": {{key_value}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:multipart-form {
+  branch: SIG007
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}

@@ -1,0 +1,14 @@
+opencollection: 1.0.0
+info:
+  name: "e-Meterai Classic"
+  type: workspace
+
+collections:
+  - name: "Web eMeterai Classic"
+    path: "collections/Web eMeterai Classic - 1"
+
+specs:
+
+docs: ''
+
+activeEnvironmentUid: 1abg6qc00000000000000

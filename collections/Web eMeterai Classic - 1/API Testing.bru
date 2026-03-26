@@ -1,0 +1,47 @@
+meta {
+  name: API Testing
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{smt_server_url}}/epicor/testing
+  body: multipartForm
+  auth: basic
+}
+
+headers {
+  "{{key_name}}": {{key_value}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:multipart-form {
+  siteid: SGI041
+  userid: rahadi
+  namadoc: 4b
+  nodoc: 9999999
+  tgldoc: 2026-03-25
+  nilaidoc: 6940219
+  namejidentitas: NPWP
+  noidentitas: 0318237427507000
+  namedipungut: RSU FASTABIQ SEHAT PKU
+  namafile: AR_INVOICE_9999999.pdf
+  currency: IDR
+  pdfencode: {{pdf64base}}
+  pagetostamp: 1
+  llx: 10
+  lly: 10
+  urx: 10
+  ury: 10
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}

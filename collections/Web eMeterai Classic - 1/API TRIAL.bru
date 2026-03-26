@@ -1,0 +1,48 @@
+meta {
+  name: API TRIAL
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://192.168.1.108/test/api/epicor/stampingdocument
+  body: multipartForm
+  auth: basic
+}
+
+headers {
+  SMT-API-KEY: Epicor-Production
+}
+
+auth:basic {
+  username: admin
+  password: 1234
+}
+
+body:multipart-form {
+  siteid: SIG007
+  userid: rahadi
+  namadoc: 4b
+  nodoc: 000002/PERJ-E/HK-XXXX/05/2026
+  tgldoc: 2026-03-25
+  nilaidoc: 7500000
+  namejidentitas: NPWP
+  noidentitas: 0318237427507000
+  namedipungut: RSU FASTABIQ SEHAT PKU
+  namafile: file2.pdf
+  currency: IDR
+  pdfencode: {{pdf64base_doc}}
+  pagetostamp: 2
+  llx: 321
+  lly: 41
+  urx: 396
+  ury: 104
+  category: p3k
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}
